@@ -1,0 +1,22 @@
+<template>    
+	<div class="c-container">
+		<div class="slds-card">
+			<div class="slds-card__body">
+				<!-- sldsValidatorIgnoreNextLine -->
+				<template if:false={noDataMessage}>
+					<!-- sldsValidatorIgnoreNextLine -->
+					<lightning-datatable 
+						key-field="Id"
+						data={tableData}
+						columns={columns}
+						hide-checkbox-column
+						min-column-width=200>
+					</lightning-datatable> 
+				</template>
+				<template if:true={noDataMessage}>
+					<b> No records associated to selected parent.</b>
+				</template>
+			</div>
+		</div> 
+	</div> 
+</template>
